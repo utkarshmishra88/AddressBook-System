@@ -71,3 +71,14 @@ build/
 # ===============================
 *.tmp
 *.swp
+
+# Maven Wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+# Git attributes
+.gitattributes
+
+# Spring helper file
+HELP.md
