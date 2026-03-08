@@ -1,4 +1,5 @@
 package com.addressbook.service;
+
 import com.addressbook.model.Person;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -51,5 +52,24 @@ public class AddressBook {
 		} else {
 			System.out.println("Contact not found");
 		}
+	}
+	
+	//UC:4- Method to delete contact using name
+	public void deleteContact(String name) {
+
+	    // Find person using Stream API
+	    Optional<Person> personOptional = contactList.stream()
+	            .filter(person -> person.getFirstName().equalsIgnoreCase(name))
+	            .findFirst();
+
+	    if (personOptional.isPresent()) {
+
+	        contactList.remove(personOptional.get());
+	        System.out.println("Contact Deleted Successfully");
+
+	    } else {
+
+	        System.out.println("Contact not found");
+	    }
 	}
 }
